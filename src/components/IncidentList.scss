@@ -1,0 +1,18 @@
+.incidents-list{
+    width: 100vw;
+    overflow-x: hidden;
+    // .nav-main{}
+    .items-lower{
+        width: 100%;
+        display: flex;
+        .side-nav{
+            flex: 1;
+        }
+        .incident-lists-cont{
+            flex: 6;
+            display: flex;
+            gap: 1rem;
+            margin-left: 2rem;
+        }
+    }
+}

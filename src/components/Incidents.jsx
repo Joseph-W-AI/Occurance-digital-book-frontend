@@ -10,13 +10,9 @@ const Incident = ({ incident }) => {
 
   return (
     <div className="incident-container">
-      <div className="nav-main">
-        <Navbar />
-      </div>
+     
       <div className='main-cont'>
-        <div className="side-nav">
-          <SideNav />
-        </div>
+        
         <div className="main-body">
         <div className="card-incident">
           <div>

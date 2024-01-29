@@ -10,6 +10,11 @@ import Logout from './accounts/Logout';
 function MenuItems() {
   const menuItems = [
     {
+      title: 'Home',
+      icon: Status,
+      link: '/main',
+    },
+    {
       title: 'Log Incidents',
       icon: Inbox,
       link: '/log-incidents',
@@ -19,11 +24,7 @@ function MenuItems() {
       icon: Reports,
       link: '/reports',
     },
-    {
-      title: 'status',
-      icon: Status,
-      link: '/status',
-    },
+   
     {
       title: 'View Incidents',
       icon: Views,
