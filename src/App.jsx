@@ -5,15 +5,20 @@ import Register from './components/accounts/Register';
 import Main from './layout/Main';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import CreateIncident from './components/CreateIncident';
 
 
 function App() {
   return (
     <>
     <Router>
-      <Route index component={Main} />
-      <Route index path="/login" component={Login} />
+      <Route path="/main" component={Main} />
+      <Route path="/login" component={Login} />
       {/* <Route path="register" element={<Register />} /> */}
+
+      <Route path="/log-incidents" component={CreateIncident} />
+      {/* <Route path="/reports" component={} /> */}
+
     <Route path="/" component={Register} exact />
     
     </Router>

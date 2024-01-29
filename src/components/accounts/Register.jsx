@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Register.scss';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 const Register = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const history = useHistory()
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -20,8 +22,10 @@ const Register = () => {
       // Handle success
       console.log('Registration successful', response.data);
 
+
       // Redirect to login page after successful registration
       console.log('About to navigate to /login');
+      history.push('/login')
     } catch (error) {
       // Handle error
       console.error('Registration failed', error);

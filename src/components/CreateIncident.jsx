@@ -1,17 +1,23 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './CreateIncident.scss'
+import Navbar from '../layout/Navbar';
+import SideNav from '../layout/SideNav';
 
 
 const CreateIncident = () => {
   const [formData, setFormData] = useState({
+    name:'',
     accused: '',
     victim: '',
     reported_by: '',
     location: '',
     date: '',
-    incident: '',
+    message: '',
+    status: '',
   });
+
+  const token = localStorage.getItem('token');
 
   const handleChange = (e) => {
     setFormData({
@@ -27,7 +33,7 @@ const CreateIncident = () => {
       const response = await axios.post('http://127.0.0.1:5000/incidents', formData, {
         headers: {
           'Content-Type': 'application/json',
-          Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxfQ.yQ0a3wDcLLSlckbZowXTgM3gjsSs8uHhhuFKJ02RXvg', 
+          Authorization: `Bearer ${token}`,
         },
       });
 
@@ -38,9 +44,30 @@ const CreateIncident = () => {
   };
 
   return (
-    <div className='form-container'>
+
+    <div className="container">
+    <div className="nav">
+        <Navbar/>
+    </div>
+    <div className='main'>
+   <div className="side-nav">
+   <SideNav />
+   </div>
+   <div className="main-content">
+   <div className='form-container'>
       <h3>Log an Incident</h3>
       <form onSubmit={handleSubmit}>
+      <div>
+          <label htmlFor="accused">Incident Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+        </div>
         <div>
           <label htmlFor="accused">Accused:</label>
           <input
@@ -97,11 +124,22 @@ const CreateIncident = () => {
           />
         </div>
         <div>
-          <label htmlFor="incident">Incident:</label>
+          <label htmlFor="status">Status:</label>
+          <input
+            type="text"
+            id="status"
+            name="status"
+            value={formData.status}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="message">Incident:</label>
           <textarea
-            id="incident"
-            name="incident"
-            value={formData.incident}
+            id="message"
+            name="message"
+            value={formData.message}
             onChange={handleChange}
             cols="30"
             rows="10"
@@ -113,6 +151,11 @@ const CreateIncident = () => {
         </div>
       </form>
     </div>
+   </div>
+</div>
+</div>
+
+   
   );
 };
 

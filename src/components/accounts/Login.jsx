@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import './Login.scss';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 const Login = () => {
   const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-
+  const history = useHistory()
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -15,18 +17,23 @@ const Login = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          username: email,  // Assuming your Flask backend expects 'username' instead of 'email'
+          email: email, 
+          // username: username, 
           password: password,
         }),
       });
 
       const data = await response.json();
-
+console.log(data.user_id);
       if (response.ok) {
-        // Login successful, you can handle the success here
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('username', data.username);
+        localStorage.setItem('email', data.email);
+        localStorage.setItem('role', data.role);
+  
         console.log('Login successful');
+        history.push('/main');
       } else {
-        // Login failed, handle the error
         console.error(data.message);
       }
     } catch (error) {
@@ -47,7 +54,7 @@ const Login = () => {
             <input
               id="email-address"
               name="email"
-              type="email"
+              type="text"
               autoComplete="email"
               required
               placeholder="Email address"

@@ -27,14 +27,15 @@
         .menuItemRight {
             display: flex;
             flex-direction: row;
+            span {
+                color: #64748B;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+            }
         }
 
-        .noNotificationStyle {
-            color: #64748B;
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 500;
-        }
+        
 
         &:hover {
             background-color: #E5E7EB;

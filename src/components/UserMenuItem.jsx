@@ -7,7 +7,7 @@ const UserMenuItem = ({ users }) => {
                 return (
                     <div className='userMenuItem' key={index}>
                         <img className='userImg' src={user.userImage} alt="user" />
-                        <p>{user.name}</p>
+                        <p>{user.username}</p>
                     </div>
                 )
             })}
