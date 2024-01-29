@@ -1,0 +1,40 @@
+.usersMenu {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    p {
+        color: #0F172A;
+        /* body/large/semibold */
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+    }
+
+    .userMenuItem {
+        display: flex;
+        flex-direction: row;
+        // justify-content: flex-start;
+        align-items: center;
+
+        .userImg {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-inline: 10px;
+        }
+
+        &:hover {
+            background-color: #E5E7EB;
+            border-radius: 10px;
+            transition: all 0.1s ease-in-out;
+        }
+    }
+}

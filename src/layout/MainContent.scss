@@ -1,0 +1,9 @@
+.mainContent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    gap: 1rem;
+}

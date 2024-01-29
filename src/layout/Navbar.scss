@@ -1,0 +1,48 @@
+.navbar {
+    display: flex;
+    height: 88px;
+    flex-shrink: 0;
+    border-bottom: 1px solid #F1F5F9;
+    width: 100vw;
+
+    .nav-logo {
+        padding: 10px 18px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px;
+        // flex: 0.10;
+        border: 1px solid #F1F5F9;
+        flex: 1;
+    }
+
+    .nav-body {
+        padding-left: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex: 6;
+        flex-shrink: 0;
+
+        .nav-body_right {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+
+            .userAvator {
+                display: inline-flex;
+                align-items: center;
+            }
+
+            .userAvator:hover {
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+                background-color: rgb(199, 215, 228);
+                border-radius: 10%;
+            }
+        }
+    }
+
+}

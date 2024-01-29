@@ -1,0 +1,17 @@
+.main {
+    display: inline-flex;
+    // flex: 0.90;
+    gap: 24px;
+    min-height: 100vh;
+    width: 100vw;
+    overflow-y: hidden;
+    background-color: #F5F5F5;
+    .side-nav{
+        flex: 1;
+        //  background-color: green;
+    }
+    .main-content{
+        flex: 5;
+        // background-color: yellow;
+    }
+}
