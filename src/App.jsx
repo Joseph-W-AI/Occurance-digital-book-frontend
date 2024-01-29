@@ -3,21 +3,20 @@ import Login from './components/accounts/Login';
 import Register from './components/accounts/Register';
 // import Navbar from './layout/Navbar'
 import Main from './layout/Main';
-import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/" element={<Main />}>
-      <Route index element={<Main />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="register" element={<Register />} />
-    </Route>
-  )
-)
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+
+
 function App() {
   return (
     <>
-     <RouterProvider router={router}/>
+    <Router>
+      <Route index component={Main} />
+      <Route index path="/login" component={Login} />
+      {/* <Route path="register" element={<Register />} /> */}
+    <Route path="/" component={Register} exact />
+    
+    </Router>
     </>
    
   );

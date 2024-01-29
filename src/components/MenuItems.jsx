@@ -4,19 +4,21 @@ import Views from '../assets/video.png'
 import Inbox from '../assets/inbox.png'
 import Status from '../assets/star.png'
 import Reports from '../assets/briefcase.png'
+import { Link } from 'react-router-dom'
 
 
 function MenuItems() {
     const menuItems = [
         {
             title: 'Log Incidents',
-            icon: Inbox
-        },
-        {
+            icon: Inbox,
+            link: '/log-incidents',
+          },
+          {
             title: 'Reports',
-            icon: Reports
-        },
-      
+            icon: Reports,
+            link: '/reports',
+          },
       
         {
             title: 'status',
@@ -36,19 +38,16 @@ function MenuItems() {
             {
                 menuItems && menuItems.map((item, index) => {
                     return (
-                        <div className="menuitem" key={index}>
-                            <div className="menuItemLeft">
-                                <img className='icon' src={item.icon} alt={item.title} />
-                                {
-                                    item.value ? (
-                                        <span style={{ color: '#2563EB' }}> {item.title}</span>
-                                    ) : (
-                                        <span className='noNotificationStyle'>{item.title}</span>
-                                    )
-                                }
-                            </div>
-                         
-                        </div>
+                        <div className='menuitems'>
+                    {menuItems.map((item, index) => (
+        <Link to={item.link} key={index} className="menuitem">
+          <div className="menuItemLeft">
+            <img className='icon' src={item.icon} alt={item.title} />
+            <span>{item.title}</span>
+          </div>
+        </Link>
+      ))}
+    </div>
                     )
                 })
             }
