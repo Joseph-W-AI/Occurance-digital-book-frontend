@@ -14,10 +14,8 @@ function App() {
     <Router>
       <Route path="/main" component={Main} />
       <Route path="/login" component={Login} />
-      {/* <Route path="register" element={<Register />} /> */}
 
       <Route path="/log-incidents" component={CreateIncident} />
-      {/* <Route path="/reports" component={} /> */}
 
     <Route path="/" component={Register} exact />
     
