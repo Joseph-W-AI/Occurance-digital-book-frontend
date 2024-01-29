@@ -1,32 +1,29 @@
 import React, { useState, useEffect } from 'react';
-import Incident from './Incident';
+import axios from 'axios';
+import Incident from './Incidents';
+const token = localStorage.getItem('token');
 
 const IncidentsList = () => {
   const [incidents, setIncidents] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('http://127.0.0.1:5000/incidents', {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: 'Bearer ' + localStorage.getItem('token'),
-          },
-        });
-
-        if (response.ok) {
-          const data = await response.json();
-          setIncidents(data);
-        } else {
-          console.error('Error fetching incidents:', response.statusText);
+    const fetchIncidents = async () => {
+        try {
+          const response = await axios.get('http://127.0.0.1:5000/incidents', {
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${token}`,
+            },
+          });
+      
+          // Use response.data instead of response
+          setIncidents(response.data);
+        } catch (error) {
+          console.error('Error fetching incidents', error);
         }
-      } catch (error) {
-        console.error('Error during fetch:', error);
-      }
-    };
+      };
 
-    fetchData();
+    fetchIncidents();
   }, []);
 
   return (

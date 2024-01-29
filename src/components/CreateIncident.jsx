@@ -45,7 +45,7 @@ const CreateIncident = () => {
 
   return (
 
-    <div className="container">
+    <div className="create-container">
     <div className="nav">
         <Navbar/>
     </div>
@@ -142,7 +142,7 @@ const CreateIncident = () => {
             value={formData.message}
             onChange={handleChange}
             cols="30"
-            rows="10"
+            rows="5"
             required
           ></textarea>
         </div>

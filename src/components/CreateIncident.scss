@@ -1,70 +1,138 @@
-.form-container {
-  background-color: white;
-  padding: 30px;
-  margin-top: 20px; // Add margin-top to the main container
+// .create-container{
+//   width: 100vw;
+//   // overflow-y: hidden;
+//   // background-color: #4299e1;
 
-  .incident-form {
-    background-color: #fff;
-    border-radius: 8px;
+//   .main{
+//     width: 100%;
+//     overflow-x: hidden;
+
+//     .main-content{
+//       width: 50%;
+//       background-color: yellow;
+//       .form-container {
+//         background-color: white;
+//         padding: 30px;
+//         margin-top: 20px;      
+//         .form-group {
+//           margin-bottom: 1rem;
+//         }
+      
+//         label {
+//           display: block;
+//           margin-bottom: 0.5rem;
+//           font-size: 1rem;
+//           color: #4a5568; // Adjust color as needed
+//         }
+      
+//         input[type="text"],
+//         textarea {
+//           width: 100%;
+//           padding: 0.5rem;
+//           border: 1px solid #d2d6dc;
+//           border-radius: 0.375rem;
+//           font-size: 1rem;
+//           transition: border-color 0.3s ease;
+      
+//           &::placeholder {
+//             color: #a0aec0;
+//           }
+      
+//           &:focus {
+//             outline: none;
+//             border-color: #4299e1;
+//           }
+//         }
+      
+//         textarea {
+//           resize: vertical;
+//         }
+      
+//         button {
+//           padding: 0.8rem;
+//           width: 100%;
+//           display: flex;
+//           justify-content: center;
+//           border: 1px solid transparent;
+//           color: #fff;
+//           background-color: rgba(39, 95, 185);
+//           font-size: 1.5rem;
+//           border-radius: 5px;
+//           cursor: pointer;
+      
+//           &:hover {
+//             background-color: rgba(39, 95, 185, 0.9);
+//           }
+      
+//           &:focus {
+//             box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+//           }
+//         }
+//       }
+//     }
+   
+//   }
+ 
+  
+// }
+
+.create-container{
+  overflow-x: hidden;
+  .form-container {
+    max-width: 400px;
+    margin: auto;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    width: 100%; // Adjust width to 100%
-    max-width: 400px; // Add max-width for responsiveness
-    margin: 0 auto; // Center the form
-  }
-
-  .form-group {
-    margin-bottom: 1rem;
-  }
-
-  label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-    color: #4a5568; // Adjust color as needed
-  }
-
-  input[type="text"],
-  textarea {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #d2d6dc;
-    border-radius: 0.375rem;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-
-    &::placeholder {
-      color: #a0aec0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    .form-container h3 {
+      text-align: center;
+      color: #333;
+     
     }
 
-    &:focus {
-      outline: none;
-      border-color: #4299e1;
+    form {
+      display: grid;
+      gap: 15px;
+      label {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      
+      input,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      
+      button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 15px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
+      button:hover {
+        background-color: #0056b3;
+      }
     }
   }
-
-  textarea {
-    resize: vertical;
-  }
-
-  button {
-    padding: 0.8rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    border: 1px solid transparent;
-    color: #fff;
-    background-color: rgba(39, 95, 185);
-    font-size: 1.5rem;
-    border-radius: 5px;
-    cursor: pointer;
-
-    &:hover {
-      background-color: rgba(39, 95, 185, 0.9);
-    }
-
-    &:focus {
-      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
-    }
-  }
+ 
+  
 }
+
+
+
+
+
+
+
