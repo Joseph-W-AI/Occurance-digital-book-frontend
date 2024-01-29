@@ -9,7 +9,11 @@ const Users = () => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const response = await axios.get('http://127.0.0.1:5000/users');
+                const response = await axios.get('http://127.0.0.1:5000/users', {
+                    headers: {
+                        Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxfQ.yQ0a3wDcLLSlckbZowXTgM3gjsSs8uHhhuFKJ02RXvg', 
+                    },
+                });
                 setUsers(response.data);
             } catch (error) {
                 console.error('Error fetching users', error);

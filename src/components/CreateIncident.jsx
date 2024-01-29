@@ -27,20 +27,18 @@ const CreateIncident = () => {
       const response = await axios.post('http://127.0.0.1:5000/incidents', formData, {
         headers: {
           'Content-Type': 'application/json',
-          Authorization: 'Bearer your_token_here', // Replace with your actual token
+          Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxfQ.yQ0a3wDcLLSlckbZowXTgM3gjsSs8uHhhuFKJ02RXvg', 
         },
       });
 
-      // Handle success, e.g., show a success message or redirect to another page
       console.log('Incident logged successfully', response.data);
     } catch (error) {
-      // Handle error, e.g., show an error message
       console.error('Error logging incident', error);
     }
   };
 
   return (
-    <div>
+    <div className='form-container'>
       <h3>Log an Incident</h3>
       <form onSubmit={handleSubmit}>
         <div>
