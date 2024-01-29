@@ -6,6 +6,7 @@ import Main from './layout/Main';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import CreateIncident from './components/CreateIncident';
+import Incident from './components/Incidents';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Route path="/login" component={Login} />
 
       <Route path="/log-incidents" component={CreateIncident} />
+      <Route path="/incidents" component={Incident} />
 
     <Route path="/" component={Register} exact />
     

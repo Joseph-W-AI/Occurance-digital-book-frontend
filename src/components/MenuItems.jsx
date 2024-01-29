@@ -27,7 +27,7 @@ function MenuItems() {
     {
       title: 'View Incidents',
       icon: Views,
-      link: '/view_incidents',
+      link: '/incidents',
     },
     {
       title: 'Logout',

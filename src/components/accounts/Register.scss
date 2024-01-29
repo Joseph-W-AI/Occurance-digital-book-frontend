@@ -5,15 +5,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 3rem 1rem;
+    // padding: 1rem;
     background-color: #F5F5F5;
 
     @media (min-width: 640px) {
-        padding: 3rem 1.5rem;
+        padding: 1.5rem;
     }
 
     @media (min-width: 1024px) {
-        padding: 3rem 2rem;
+        padding: 1rem;
     }
 }
 
@@ -32,6 +32,7 @@
     .space-y-6 > :not([hidden]) ~ :not([hidden]) {
         margin-top: 1.5rem;
         margin-bottom: 1.5rem;
+        padding: 0.5rem 1.5rem;
       }
       
 }
