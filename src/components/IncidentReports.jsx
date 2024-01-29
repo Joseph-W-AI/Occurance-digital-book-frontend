@@ -9,7 +9,7 @@ const IncidentReports = () => {
   useEffect(() => {
     const fetchIncidents = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:5000/incidents', {
+        const response = await axios.get('https://occurances-digital-book.onrender.com/incidents', {
           headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`,

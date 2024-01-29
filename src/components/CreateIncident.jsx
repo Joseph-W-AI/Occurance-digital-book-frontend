@@ -30,7 +30,7 @@ const CreateIncident = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://127.0.0.1:5000/incidents', formData, {
+      const response = await axios.post('https://occurances-digital-book.onrender.com/incidents', formData, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Card from '../components/Card';
-import CreateIncident from '../components/CreateIncident';
 import './MainContent.scss';
+const token = localStorage.getItem('token');
 
 const MainContent = () => {
   const [incidents, setIncidents] = useState([]);
@@ -10,10 +10,10 @@ const MainContent = () => {
   useEffect(() => {
     const fetchIncidents = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:5000/incidents', {
+        const response = await axios.get('https://occurances-digital-book.onrender.com/incidents', {
           headers: {
             'Content-Type': 'application/json',
-            Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxfQ.yQ0a3wDcLLSlckbZowXTgM3gjsSs8uHhhuFKJ02RXvg',
+            Authorization: `Bearer ${token}`,
           },
         });
 
