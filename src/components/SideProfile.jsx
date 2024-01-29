@@ -1,5 +1,5 @@
 import React from "react";
-import Avatar from "../assets/avatar.png";
+import Avatar from "../assets/Avatar.png";
 import "./SideProfile.scss";
 
 function SideProfile() {
