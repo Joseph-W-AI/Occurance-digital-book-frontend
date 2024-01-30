@@ -6,7 +6,10 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
   const history = useHistory()
+
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -24,7 +27,7 @@ const Login = () => {
       });
 
       const data = await response.json();
-console.log(data.user_id);
+      console.log(data.user_id);
       if (response.ok) {
         localStorage.setItem('token', data.token);
         localStorage.setItem('username', data.username);
@@ -32,10 +35,15 @@ console.log(data.user_id);
         localStorage.setItem('role', data.role);
   
         console.log('Login successful');
-        history.push('/main');
+        setError('');
+        setSuccessMessage('Login successful. Redirecting to main page...');
+
+        setTimeout(() => {
+          history.push('/main');
+        }, 2000);
       } else {
-        console.error(data.message);
-      }
+        setSuccessMessage('');
+        setError(data.message);      }
     } catch (error) {
       console.error('Error during login:', error);
     }
@@ -47,7 +55,10 @@ console.log(data.user_id);
         <div className="login-heading">
           <h2>Login</h2>
         </div>
+       
         <form className="space-y-6" onSubmit={handleLogin}>
+        {error && <div className="error-message">{error}</div>}
+        {successMessage && <div className="success-message">{successMessage}</div>}
           <input type="hidden" name="remember" defaultValue="true" />
         
           <div className="form-input-group">

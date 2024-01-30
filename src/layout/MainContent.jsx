@@ -24,8 +24,7 @@ const MainContent = () => {
     };
 
     fetchIncidents();
-  }, []);  // Empty dependency array means this effect runs once when the component mounts
-
+  }, []);  
   return (
     <div className='mainContent'>
       {/* <CreateIncident /> */}

@@ -6,10 +6,10 @@ import Navbar from '../layout/Navbar';
 import './IncidentList.scss'
 
 
-const token = localStorage.getItem('token');
 
 const IncidentsList = () => {
   const [incidents, setIncidents] = useState([]);
+  const token = localStorage.getItem('token');
 
   useEffect(() => {
     const fetchIncidents = async () => {
@@ -21,7 +21,6 @@ const IncidentsList = () => {
             },
           });
       
-          // Use response.data instead of response
           setIncidents(response.data);
         } catch (error) {
           console.error('Error fetching incidents', error);

@@ -19,7 +19,7 @@ const Users = () => {
                 }
 
                 // Use the retrieved token in the Authorization header
-                const response = await axios.get('http://127.0.0.1:5000/users', {
+                const response = await axios.get('https://occurances-digital-book.onrender.com/users', {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },

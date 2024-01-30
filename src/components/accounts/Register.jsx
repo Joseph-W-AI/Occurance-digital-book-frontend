@@ -7,6 +7,8 @@ const Register = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [message, setMessage] = useState('');
+  const [error, setError] = useState('');
   const history = useHistory()
 
   const handleRegister = async (e) => {
@@ -19,15 +21,15 @@ const Register = () => {
         password,
       });
 
-      // Handle success
+      setMessage('Registration successful');
+      setError('');
       console.log('Registration successful', response.data);
 
-
-      // Redirect to login page after successful registration
       console.log('About to navigate to /login');
       history.push('/login')
     } catch (error) {
-      // Handle error
+      setMessage('');
+      setError('Registration failed. Please check your details and try again.');
       console.error('Registration failed', error);
     }
   };
@@ -38,6 +40,8 @@ const Register = () => {
         <div className="register-heading">
           <h2>Register</h2>
         </div>
+        {message && <div className="success-message">{message}</div>}
+        {error && <div className="error-message">{error}</div>}
         <form className="space-y-6" onSubmit={handleRegister}>
           <input type="hidden" name="remember" defaultValue="true" />
           <div className="form-input-group">

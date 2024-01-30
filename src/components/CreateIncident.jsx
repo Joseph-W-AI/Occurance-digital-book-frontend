@@ -16,6 +16,7 @@ const CreateIncident = () => {
     message: '',
     status: '',
   });
+  const [successMessage, setSuccessMessage] = useState('');
 
   const token = localStorage.getItem('token');
 
@@ -37,7 +38,22 @@ const CreateIncident = () => {
         },
       });
 
-      console.log('Incident logged successfully', response.data);
+      console.log('Incident Created successfully', response.data);
+      setSuccessMessage('Incident logged successfully');
+      setFormData({
+        name: '',
+        accused: '',
+        victim: '',
+        reported_by: '',
+        location: '',
+        date: '',
+        message: '',
+        status: '',
+      });
+
+      setTimeout(() => {
+        setSuccessMessage('');
+      }, 2000);
     } catch (error) {
       console.error('Error logging incident', error);
     }
@@ -57,6 +73,9 @@ const CreateIncident = () => {
    <div className='form-container'>
       <h3>Log an Incident</h3>
       <form onSubmit={handleSubmit}>
+            {successMessage && (
+              <div className="success-message">{successMessage}</div>
+            )}
       <div>
           <label htmlFor="accused">Incident Name:</label>
           <input

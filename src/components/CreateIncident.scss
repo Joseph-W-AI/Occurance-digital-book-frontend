@@ -1,86 +1,11 @@
-// .create-container{
-//   width: 100vw;
-//   // overflow-y: hidden;
-//   // background-color: #4299e1;
-
-//   .main{
-//     width: 100%;
-//     overflow-x: hidden;
-
-//     .main-content{
-//       width: 50%;
-//       background-color: yellow;
-//       .form-container {
-//         background-color: white;
-//         padding: 30px;
-//         margin-top: 20px;      
-//         .form-group {
-//           margin-bottom: 1rem;
-//         }
-      
-//         label {
-//           display: block;
-//           margin-bottom: 0.5rem;
-//           font-size: 1rem;
-//           color: #4a5568; // Adjust color as needed
-//         }
-      
-//         input[type="text"],
-//         textarea {
-//           width: 100%;
-//           padding: 0.5rem;
-//           border: 1px solid #d2d6dc;
-//           border-radius: 0.375rem;
-//           font-size: 1rem;
-//           transition: border-color 0.3s ease;
-      
-//           &::placeholder {
-//             color: #a0aec0;
-//           }
-      
-//           &:focus {
-//             outline: none;
-//             border-color: #4299e1;
-//           }
-//         }
-      
-//         textarea {
-//           resize: vertical;
-//         }
-      
-//         button {
-//           padding: 0.8rem;
-//           width: 100%;
-//           display: flex;
-//           justify-content: center;
-//           border: 1px solid transparent;
-//           color: #fff;
-//           background-color: rgba(39, 95, 185);
-//           font-size: 1.5rem;
-//           border-radius: 5px;
-//           cursor: pointer;
-      
-//           &:hover {
-//             background-color: rgba(39, 95, 185, 0.9);
-//           }
-      
-//           &:focus {
-//             box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
-//           }
-//         }
-//       }
-//     }
-   
-//   }
- 
-  
-// }
 
 .create-container{
+  
   overflow-x: hidden;
   .form-container {
+    // margin-top: 2rem;
     max-width: 400px;
-    margin: auto;
+    margin: 2rem auto;
     padding: 20px;
     background-color: #fff;
     border: 1px solid #ddd;
@@ -93,6 +18,13 @@
     }
 
     form {
+      .success-message {
+        background-color: #4caf50; 
+        color: #fff; 
+        padding: 10px; 
+        margin-bottom: 10px; 
+        border-radius: 5px;
+      }
       display: grid;
       gap: 15px;
       label {

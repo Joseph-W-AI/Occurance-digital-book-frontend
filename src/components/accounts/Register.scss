@@ -43,6 +43,15 @@
     font-weight: 300;
     color: #1a202c;
 }
+.success-message {
+    color: green;
+    margin-bottom: 10px;
+  }
+  
+  .error-message {
+    color: red;
+    margin-bottom: 10px;
+  }
 
 .form-input-group {
     border-radius: 0.375rem;
