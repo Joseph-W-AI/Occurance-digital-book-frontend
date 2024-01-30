@@ -27,7 +27,7 @@ const IncidentTable = ({ incidents, onStatusChange, onDelete }) => {
       </thead>
       <tbody>
         {incidents.map((incident) => (
-          <tr key={incident.id}>
+          <tr key={incident.incident_id}>
             <td>{incident.name}</td>
             <td>{incident.accused}</td>
             <td>{incident.victim}</td>
@@ -37,13 +37,13 @@ const IncidentTable = ({ incidents, onStatusChange, onDelete }) => {
                   color: incident.status === 'completed' ? 'green' : 'red',
                   cursor: 'pointer',
                 }}
-                onClick={() => onStatusChange(incident.id)}
+                onClick={() => onStatusChange(incident.incident_id)}
               >
                 {incident.status}
               </span>
             </td>
             <td>
-              <button onClick={() => onDelete(incident.id)}>Delete</button>
+              <button onClick={() => onDelete(incident.incident_id)}>Delete</button>
             </td>
           </tr>
         ))}
