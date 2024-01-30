@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Card from '../components/Card';
 import './MainContent.scss';
-const token = localStorage.getItem('token');
 
 const MainContent = () => {
   const [incidents, setIncidents] = useState([]);
+  const token = localStorage.getItem('token');
 
   useEffect(() => {
     const fetchIncidents = async () => {
