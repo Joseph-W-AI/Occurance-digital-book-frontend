@@ -18,9 +18,11 @@
             justify-content: space-between;
             align-items: center;
             gap: 10px;
+            list-style-type: none;
+
             .icon {
-                width: 24px; /* Adjust the width as needed */
-                height: 24px; /* Adjust the height as needed */
+                width: 24px; 
+                height: 24px;
               }
         }
 

@@ -11,7 +11,6 @@ const Logout = () => {
     localStorage.removeItem('email');
     localStorage.removeItem('role');
 
-    // Redirect to the login page or any other desired page
     history.push('/login');
   };
 

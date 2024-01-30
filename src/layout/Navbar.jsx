@@ -7,8 +7,17 @@ import notification from '../assets/notification.png';
 import chevrondown from '../assets/chevron-down.png';
 import avator from '../assets/Avatar.png';
 import SearchForm from '../components/SearchForm'
+import { Link } from 'react-router-dom';
 
+// /log-incidents
 function Navbar() {
+
+    const item =      
+        {
+          title: 'Log Incidents',
+          link: '/log-incidents',
+        }
+      
     return (
         <div className='navbar'>
             <div className="nav-logo">
@@ -20,7 +29,10 @@ function Navbar() {
                 <SearchForm/>
             </div>
                 <div className="nav-body_right">
-                    <Button msg="Create An Incident" sign={true} />
+                <Link to={item.link}>
+                <Button msg="Create An Incident" sign={true} />
+                 </Link>
+                    
                     <NavIcon url={searchIcon} />
                     <NavIcon url={notification} />
                     <div className="userAvator">
