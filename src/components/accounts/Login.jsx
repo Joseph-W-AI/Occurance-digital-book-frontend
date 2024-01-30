@@ -36,7 +36,7 @@ const Login = () => {
   
         console.log('Login successful');
         setError('');
-        setSuccessMessage('Login successful. Redirecting to main page...');
+        setSuccessMessage('Login successfully, Welcome to D.O.B');
 
         setTimeout(() => {
           history.push('/main');
