@@ -7,14 +7,14 @@
   position: relative;
   padding: 25px;
   width: 350px;
-  // height: 400px;
+  height: 500px;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
-  background: white;
+  background: rgb(255, 255, 255);
   transition: all 0.1s ease;
   margin-top: 2rem;
 
@@ -32,7 +32,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center; 
-      gap: 1rem; 
+      gap: 2rem; 
     }
     
     .names{

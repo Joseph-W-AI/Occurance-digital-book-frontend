@@ -15,7 +15,7 @@ const IncidentReports = () => {
             Authorization: `Bearer ${token}`,
           },
         });
-console.log(response.data);
+
         setIncidents(response.data);
       } catch (error) {
         console.error('Error fetching incidents', error);
@@ -30,14 +30,25 @@ console.log(response.data);
     console.log('Status change requested for incident:', incidentId);
   };
 
-  const handleDelete = (incidentId) => {
-    // Implement the logic to delete the incident
-    console.log('Delete requested for incident:', incidentId);
+  const handleDelete = async (incidentId) => {
+    try {
+      await axios.delete(`https://occurances-digital-book.onrender.com/incidents/${incidentId}`, {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      // Update the incidents after successful deletion
+      setIncidents((prevIncidents) => prevIncidents.filter((incident) => incident.id !== incidentId));
+      console.log('Incident deleted successfully');
+    } catch (error) {
+      console.error('Error deleting incident', error);
+    }
   };
 
   return (
     <div>
-      
       <IncidentTable incidents={incidents} onStatusChange={handleStatusChange} onDelete={handleDelete} />
     </div>
   );
